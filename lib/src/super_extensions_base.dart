@@ -30,29 +30,69 @@ extension ContextExtension on BuildContext {
         builder: (context) => child,
       );
 
-  double screenHeight() => MediaQuery.of(this).size.height;
+  ///Extension method on BuildContext to get the screenHeight.
+  ///It returns MediaQuery.of(context).size.height
+  ///
+  double get screenHeight => MediaQuery.of(this).size.height;
 
-  double screenWidth() => MediaQuery.of(this).size.width;
+  ///Extension method on BuildContext to get the screenWidth.
+  ///It returns MediaQuery.of(context).size.width
+  ///
+  double get screenWidth => MediaQuery.of(this).size.width;
 
-  bool isMobile() => MediaQuery.of(this).size.width < 650;
+  ///Extension method on BuildContext to get the screen aspectRatio.
+  ///It returns MediaQuery.of(context).size.aspectRatio
+  ///
+  double get aspectRatio => MediaQuery.of(this).size.aspectRatio;
 
-  bool isTablet() =>
+  ///Extension method on BuildContext that returns whether the screen
+  ///size is of mobile or not.
+  ///It returns true if MediaQuery.of(context).size.width<650, else returns false.
+  ///
+  bool get isMobile => MediaQuery.of(this).size.width < 650;
+
+  ///Extension method on BuildContext that returns whether the screen
+  ///size is of tablet or not.
+  ///It returns true if 1024>MediaQuery.of(context).size.width>=650, else returns false.
+  ///
+  bool get isTablet =>
       MediaQuery.of(this).size.width < 1024 &&
       MediaQuery.of(this).size.width >= 650;
 
-  bool isDesktop() => MediaQuery.of(this).size.width >= 1024;
+  ///Extension method on BuildContext that returns whether the screen
+  ///size is of desktop or not.
+  ///It returns true if MediaQuery.of(context).size.width>=1024, else returns false.
+  ///
+  bool get isDesktop => MediaQuery.of(this).size.width >= 1024;
 
+  ///Extension method on BuildContext to push to [className]
+  ///using Navigator 1.0
+  ///
   void push(Widget className) => Navigator.of(this).push(
         MaterialPageRoute(builder: (context) => className),
       );
+
+  ///Extension method on BuildContext to pushReplacement to [className]
+  ///using Navigator 1.0
+  ///
   void pushReplacement(Widget className) => Navigator.of(this).pushReplacement(
         MaterialPageRoute(builder: (context) => className),
       );
+
+  ///Extension method on BuildContext to pushNamed to [path]
+  ///using Navigator 1.0
+  ///
   void pushNamed(String path) => Navigator.of(this).pushNamed(path);
 
+  ///Extension method on BuildContext to pushReplacementNamed to [path]
+  ///using Navigator 1.0
+  ///
   void pushReplacementNamed(String path) =>
       Navigator.of(this).pushReplacementNamed(path);
 
+  ///Extension method on BuildContext to pushAndRemoveUntil to [className]
+  ///using Navigator 1.0
+  ///
   void pushAndRemoveUntil(Widget className) =>
       Navigator.of(this).pushAndRemoveUntil(
         MaterialPageRoute(
@@ -61,21 +101,35 @@ extension ContextExtension on BuildContext {
         (route) => true,
       );
 
+  ///Extension method on BuildContext to pushNamedAndRemoveUntil to [path]
+  ///using Navigator 1.0
+  ///
   void pushNamedAndRemoveUntil(String path) =>
       Navigator.of(this).pushNamedAndRemoveUntil(
         path,
         (route) => true,
       );
 
+  ///Extension method on BuildContext to pop the current screen
+  ///using Navigator 1.0
+  ///
   void pop() => Navigator.of(this).pop();
 
+  ///Extension method on BuildContext to pop the current screen
+  ///and push the [path] using Navigator 1.0
+  ///
   void popAndPushNamed(String path) => Navigator.of(this).popAndPushNamed(path);
 }
 
 extension StringExtension on String {
+  ///Extension method on String to capitalise first character of the string.
+  ///
   String capitaliseFirstChar() =>
       isEmpty ? this : this[0].toUpperCase() + substring(0, length);
 
+  ///Extension method on String to capitalise first character
+  ///of each word of the string.
+  ///
   String capitaliseEachWordFirstChar() => isEmpty
       ? this
       : replaceAll(RegExp(' +'), ' ')
