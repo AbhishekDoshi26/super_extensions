@@ -14,11 +14,11 @@ In this package, right now we have following extension methods:
 - **Extensions on BuildContext:**
 	- void showSnackBar(SnackBar snackBar)
 	- void showNewDialog(Widget child)
-	- double screenHeight()
-	- double screenWidth()
-	- bool isMobile()
-	- bool isTablet()
-	- bool isDesktop()
+	- double get screenHeight
+	- double get screenWidth
+	- bool get isMobile
+	- bool get isTablet
+	- bool get isDesktop
 	- void push(Widget className)
 	- void pushReplacement(Widget className)
 	- void pushNamed(String path)
