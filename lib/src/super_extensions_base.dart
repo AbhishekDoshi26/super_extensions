@@ -83,3 +83,13 @@ extension StringExtension on String {
           .map((str) => str.capitaliseFirstChar())
           .join(' ');
 }
+
+extension NumberExtension on num {
+  /// creates a Empty [SizedBox] with height as the given number
+  /// 
+  SizedBox get pH => SizedBox(height: toDouble());
+
+  /// creates a Empty [SizedBox] with width as the given number
+  /// 
+  SizedBox get pW => SizedBox(width: toDouble());
+}
