@@ -85,11 +85,11 @@ extension StringExtension on String {
 }
 
 extension NumberExtension on num {
-  /// creates a Empty [SizedBox] with height as the given number
+  /// Creates an empty SizedBox with [height] as the given number.
   /// 
   SizedBox get hSizedBox => SizedBox(height: toDouble());
 
-  /// creates a Empty [SizedBox] with width as the given number
+  /// Creates an empty SizedBox with [width] as the given number.
   /// 
   SizedBox get wSizedBox => SizedBox(width: toDouble());
 }
