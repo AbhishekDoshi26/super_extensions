@@ -31,6 +31,10 @@ In this package, right now we have following extension methods:
 - **Extensions on String:**
 	- String capitaliseFirstChar()
 	- String capitaliseEachWordFirstChar()
+	<br>
+- **Extensions on num:**
+	- SizedBox hSizedBox
+	- SizedBox wSizedBox
 
 
 ## Contribution Information
