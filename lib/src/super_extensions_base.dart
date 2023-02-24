@@ -87,9 +87,9 @@ extension StringExtension on String {
 extension NumberExtension on num {
   /// creates a Empty [SizedBox] with height as the given number
   /// 
-  SizedBox get pH => SizedBox(height: toDouble());
+  SizedBox get hSizedBox => SizedBox(height: toDouble());
 
   /// creates a Empty [SizedBox] with width as the given number
   /// 
-  SizedBox get pW => SizedBox(width: toDouble());
+  SizedBox get wSizedBox => SizedBox(width: toDouble());
 }
