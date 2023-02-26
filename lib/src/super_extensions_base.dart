@@ -150,24 +150,33 @@ extension StringExtension on String {
   /// ```
   void copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
 
-  /// Extension method to check if a string is a valid email.
-  /// You can pass a custom [emailPattern] as a parameter.
+  /// Extension method to get the initials of a string.
+  /// It takes no parameters.
   /// This is how you can use it:
   /// ```dart
-  /// String email = 'email@example.com';
-  ///   final bool isValidEmail = email.isEmailValid();
-  ///
-  /// or pass a custom pattern as a parameter like this:
-  ///   final bool isValidEmail = email.isEmailValid(
-  ///     emailPattern: r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+',
-  ///   );
-  /// ```
-  bool isValidEmail({Pattern? emailPattern}) {
-    final Pattern pattern = emailPattern ??
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-
-    final RegExp regex = RegExp(pattern as String);
-    return isNotEmpty && regex.hasMatch(trim());
+  /// String text = "Example Name";
+  /// TextButton(
+  ///    child: const Text('Get initials'),
+  ///    onPressed: () => text.getInitials(),
+  ///    );
+  ///    ```
+  ///    It returns "En" in this case.
+  ///    If the string is empty, it returns null.
+  ///    If the string has only one word, it returns the first character of the word.
+  ///    If the string has more than one word, it returns the first character of each word.
+  ///    ```dart
+  String? get getInitials {
+    final trimmed = trim();
+    if (trimmed.isEmpty) {
+      return null;
+    }
+    final parts = trimmed.split(' ');
+    if (parts.length == 1) {
+      return parts.first.characters.first;
+    } else {
+      final firstLetters = parts.map((part) => part.characters.first).join();
+      return firstLetters;
+    }
   }
 }
 
