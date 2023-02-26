@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show Clipboard, ClipboardData;
 
 /// Extension methods on BuildContext
 extension ContextExtension on BuildContext {
@@ -136,6 +137,18 @@ extension StringExtension on String {
           .split(' ')
           .map((str) => str.capitaliseFirstChar())
           .join(' ');
+
+  /// Extension method to copy a string to clipboard.
+  /// It takes no parameters.
+  /// This is how you can use it:
+  /// ```dart
+  /// String text = "The beautiful thing with Dart is that you  can create your own extensions.";
+  ///  TextButton(
+  ///     child: const Text('Copy to clipboard'),
+  ///     onPressed: () => text.copyToClipboard(),
+  ///    );
+  /// ```
+  void copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
 }
 
 extension NumberExtension on num {

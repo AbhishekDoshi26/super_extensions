@@ -31,6 +31,7 @@ In this package, right now we have following extension methods:
 - **Extensions on String:**
 	- String capitaliseFirstChar()
 	- String capitaliseEachWordFirstChar()
+	- void copyToClipboard()
 	<br>
 - **Extensions on num:**
 	- SizedBox hSizedBox
