@@ -10,7 +10,7 @@ We probably use lots of extension methods in our project. So, this package combi
 To learn more about Extension Methods, feel free to check this [article](https://medium.com/google-developer-experts/extension-methods-eb7a89a055f8 "article").
 
 ## List of Extensions
-In this package, right now we have following extension methods:
+In this package, right now we have the following extension methods:
 - **Extensions on BuildContext:**
 	- void showSnackBar(SnackBar snackBar)
 	- void showNewDialog(Widget child)
@@ -33,6 +33,9 @@ In this package, right now we have following extension methods:
 	- String capitaliseEachWordFirstChar()
 	- void copyToClipboard()
 	<br>
+- **Extensions on String?:**
+    - bool isBlank
+    - bool isNotBlank
 - **Extensions on num:**
 	- SizedBox hSizedBox
 	- SizedBox wSizedBox

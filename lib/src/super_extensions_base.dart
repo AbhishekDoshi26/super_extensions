@@ -151,6 +151,19 @@ extension StringExtension on String {
   void copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
 }
 
+extension NullableStringExtension on String? {
+  /// Extension method on String? to eliminate the need for a null-check before
+  /// checking if a string is empty, inspired by method of same name from kotlin
+  bool get isBlank {
+    if (this != null && this!.isNotEmpty) return false;
+
+    return true;
+  }
+
+  /// Extension method which is an inverse of [isBlank] method
+  bool get isNotBlank => !isBlank;
+}
+
 extension NumberExtension on num {
   /// Creates an empty SizedBox with height as the given number.
   ///
