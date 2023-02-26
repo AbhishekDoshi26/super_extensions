@@ -142,23 +142,13 @@ extension StringExtension on String {
   /// It takes no parameters.
   /// This is how you can use it:
   /// ```dart
-  /// String text = 'The beautiful thing with Dart is that you can create your own extensions.';
-  ///
-  /// TextButton(
-  /// child: Text('Copy to Clipboard'),
-  ///  onPressed: (){
-  ///   text.copyToClipboard();
-  /// },
-  /// );
-  ///
+  /// String text = "The beautiful thing with Dart is that you  can create your own extensions.";
+  ///  TextButton(
+  ///     child: const Text('Copy to clipboard'),
+  ///     onPressed: () => text.copyToClipboard(),
+  ///    );
   /// ```
-  void copyToClipboard() {
-    Clipboard.setData(
-      ClipboardData(
-        text: this,
-      ),
-    );
-  }
+  void copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
 }
 
 extension NumberExtension on num {
