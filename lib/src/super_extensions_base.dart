@@ -161,11 +161,7 @@ extension NullableStringExtension on String? {
   ///   // do something
   /// }
   /// ```
-  bool get isBlank {
-    if (this != null && this!.isNotEmpty) return false;
-
-    return true;
-  }
+  bool get isBlank => !(this != null && this!.isNotEmpty);
 
   /// Extension method which is an inverse of [isBlank] method
   /// Sample usage:
