@@ -68,7 +68,7 @@ void main() {
                           ],
                         ),
                       ),
-                      child: const Text('Show SnackBar'),
+                      child: const Text('Show New Dialog'),
                     ),
                   ],
                 );
