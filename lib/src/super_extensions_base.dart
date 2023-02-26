@@ -154,6 +154,13 @@ extension StringExtension on String {
 extension NullableStringExtension on String? {
   /// Extension method on String? to eliminate the need for a null-check before
   /// checking if a string is empty, inspired by method of same name from kotlin
+  /// Sample usage:
+  /// ```dart
+  /// String? text = null;
+  /// if (text.isBlank) {
+  ///   // do something
+  /// }
+  /// ```
   bool get isBlank {
     if (this != null && this!.isNotEmpty) return false;
 
@@ -161,6 +168,13 @@ extension NullableStringExtension on String? {
   }
 
   /// Extension method which is an inverse of [isBlank] method
+  /// Sample usage:
+  /// ```dart
+  /// String? text = null;
+  /// if (text.isNotBlank) {
+  ///   // do something
+  /// }
+  /// ```
   bool get isNotBlank => !isBlank;
 }
 
