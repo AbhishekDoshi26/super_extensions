@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:super_extensions/src/super_extensions_base.dart';
 
@@ -44,6 +45,25 @@ void main() {
           // returns back capitalized string
           final text3 = 'Hello   World'.capitaliseEachWordFirstChar();
           expect(text3, 'Hello World');
+        },
+      );
+
+      test(
+        'Check if text is successfully copied to clipboard',
+        () async {
+          TestWidgetsFlutterBinding.ensureInitialized();
+          const text = 'Hello World';
+          await text.copyToClipboard();
+
+          final data = await Clipboard.getData(Clipboard.kTextPlain);
+
+          print(data);
+
+          // null check
+          expect(data != null, true);
+
+          // text check
+          expect(data?.text, 'Hello World');
         },
       );
     },

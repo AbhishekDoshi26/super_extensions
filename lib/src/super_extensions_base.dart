@@ -148,7 +148,8 @@ extension StringExtension on String {
   ///     onPressed: () => text.copyToClipboard(),
   ///    );
   /// ```
-  void copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
+  Future<void> copyToClipboard() =>
+      Clipboard.setData(ClipboardData(text: this));
 }
 
 extension NumberExtension on num {
