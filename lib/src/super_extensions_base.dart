@@ -126,7 +126,7 @@ extension StringExtension on String {
   ///Extension method on String to capitalise first character of the string.
   ///
   String capitaliseFirstChar() =>
-      isEmpty ? this : this[0].toUpperCase() + substring(0, length);
+      isEmpty ? this : this[0].toUpperCase() + substring(1);
 
   ///Extension method on String to capitalise first character
   ///of each word of the string.
