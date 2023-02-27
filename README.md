@@ -29,9 +29,11 @@ In this package, right now we have following extension methods:
 	- void popAndPushNamed(String path)
 	<br>
 - **Extensions on String:**
-	- String capitaliseFirstChar()
-	- String capitaliseEachWordFirstChar()
-	- void copyToClipboard()
+    - String capitaliseFirstChar()
+    - String capitaliseEachWordFirstChar()
+    - void copyToClipboard()
+    - void isValidEmail(String pattern)
+    - String? get getInitials
 	<br>
 - **Extensions on num:**
 	- SizedBox hSizedBox
