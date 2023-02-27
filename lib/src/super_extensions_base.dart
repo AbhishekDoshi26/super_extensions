@@ -52,6 +52,21 @@ extension ContextExtension on BuildContext {
   ///
   bool get isMobile => MediaQuery.of(this).size.width < 650;
 
+  /// Extension method on BuildContext for getting padding
+  /// return `EdgeInsets`
+  ///
+  EdgeInsets get padding => MediaQuery.of(this).padding;
+
+  /// Extension method on BuildContext to for getting viewPadding
+  /// return `EdgeInsets`
+  ///
+  EdgeInsets get viewPadding => MediaQuery.of(this).viewPadding;
+
+  /// Extension method on BuildContext for viewInsets
+  /// returns `EdgeInsets`
+  ///
+  EdgeInsets get viewInsets => MediaQuery.of(this).viewInsets;
+
   ///Extension method on BuildContext that returns whether the screen
   ///size is of tablet or not.
   ///It returns true if 1024>MediaQuery.of(context).size.width>=650, else returns false.
