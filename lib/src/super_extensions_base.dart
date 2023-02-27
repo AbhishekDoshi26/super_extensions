@@ -64,7 +64,7 @@ extension ContextExtension on BuildContext {
 
   /// Extension method on BuildContext for viewInsets
   /// returns `EdgeInsets`
-  /// 
+  ///
   EdgeInsets get viewInsets => MediaQuery.of(this).viewInsets;
 
   ///Extension method on BuildContext that returns whether the screen
