@@ -23,7 +23,11 @@ jobs:
 
       # Statically analyze the Dart code for any errors.
       - name: ✅ Analyze Linter Errors
-        run: dart analyze .
+        run: dart analyze .      
+        
+      # Statically analyze the Dart code for any errors.
+      - name: 🧪 Run Test Cases
+        run: flutter test
         
       # Dry Run Publish.
       - name: 🛠️ Dry Run Pub Publish

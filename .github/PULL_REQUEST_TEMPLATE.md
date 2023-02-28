@@ -18,6 +18,7 @@
 - [ ] 🛠️ Added proper documentation
 - [ ] ❌ No warnings or errors in the code
 - [ ] ✅ If added a new extension, added in Readme and example too
+- [ ] 🧪 If added a new extension, written proper test cases for it
 
 ## Type of Change
 
