@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:super_extensions/src/super_extensions_base.dart';
+import 'package:super_extensions/super_extensions.dart';
 
 void main() {
   group(
@@ -66,6 +66,9 @@ void main() {
 
           const text1 = 'John Harry Doe';
           expect(text1.getInitials, 'JHD');
+
+          const text2 = 'John';
+          expect(text2.getInitials, 'J');
         },
       );
     },

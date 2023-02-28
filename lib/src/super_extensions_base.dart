@@ -114,7 +114,7 @@ extension ContextExtension on BuildContext {
         MaterialPageRoute(
           builder: (context) => className,
         ),
-        (route) => true,
+        (route) => false,
       );
 
   ///Extension method on BuildContext to pushNamedAndRemoveUntil to [path]
@@ -123,13 +123,17 @@ extension ContextExtension on BuildContext {
   void pushNamedAndRemoveUntil(String path) =>
       Navigator.of(this).pushNamedAndRemoveUntil(
         path,
-        (route) => true,
+        (route) => false,
       );
 
   ///Extension method on BuildContext to pop the current screen
   ///using Navigator 1.0
   ///
   void pop() => Navigator.of(this).pop();
+
+  ///Extension method on BuildContext to pop the current and return true
+  /// if a popping event is possible and false if it's not using Navigator 1.0
+  Future<bool> maybePop() => Navigator.of(this).maybePop();
 
   ///Extension method on BuildContext to pop the current screen
   ///and push the [path] using Navigator 1.0
