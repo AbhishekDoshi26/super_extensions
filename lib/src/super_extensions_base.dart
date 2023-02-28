@@ -165,7 +165,6 @@ extension StringExtension on String {
   /// ```
   Future<void> copyToClipboard() =>
       Clipboard.setData(ClipboardData(text: this));
-  void copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
 
   /// Extension method to check if a string is a valid email.
   /// You can pass a custom [emailPattern] as a parameter.

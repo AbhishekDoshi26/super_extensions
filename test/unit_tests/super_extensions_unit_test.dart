@@ -46,6 +46,28 @@ void main() {
           expect(text3, 'Hello World');
         },
       );
+
+      test(
+        'Ensure valid emails are valid',
+        () {
+          const email0 = 'test@gmail.com';
+          expect(email0.isValidEmail(), true);
+
+          const email1 = 'test.1234@test.co';
+          expect(email1.isValidEmail(), true);
+        },
+      );
+
+      test(
+        'Ensure appropriate initials from strings',
+        () {
+          const text0 = 'first test ';
+          expect(text0.getInitials, 'ft');
+
+          const text1 = 'John Harry Doe';
+          expect(text1.getInitials, 'JHD');
+        },
+      );
     },
   );
 
