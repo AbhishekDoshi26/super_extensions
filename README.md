@@ -12,7 +12,7 @@ To learn more about Extension Methods, feel free to check this [article](https:/
 
 ## List of Extensions
 
-In this package, right now we have following extension methods:
+In this package, right now we have the following extension methods:
 
 - **Extensions on BuildContext:**
   - void showSnackBar(SnackBar snackBar)
