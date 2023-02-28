@@ -28,6 +28,7 @@ In this package, right now we have following extension methods:
   - void pushReplacementNamed(String path)
   - void pushAndRemoveUntil(Widget className)
   - void pushNamedAndRemoveUntil(String path)
+  - Future<bool> maybePop()
   - void pop()
   - void popAndPushNamed(String path)
   - EdgeInsets padding
