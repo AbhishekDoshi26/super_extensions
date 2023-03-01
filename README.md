@@ -1,17 +1,10 @@
-<div style="text-align: center">
-  <style>
-    img {
-      display: inline-block;
-      margin: 8px 10px;
-      vertical-align: middle;
-    }
-  </style>
+<p align="center">
 
-  [![Super Extensions](https://github.com/CoderNamedHendrick/super_extensions/actions/workflows/main.yaml/badge.svg)](https://github.com/CoderNamedHendrick/super_extensions/actions/workflows/main.yaml)
-  [![codecov](https://codecov.io/gh/CoderNamedHendrick/super_extensions/branch/main/graph/badge.svg)](https://codecov.io/gh/CoderNamedHendrick/super_extensions/branch/main)
-  [![GitHub stars](https://img.shields.io/github/stars/AbhishekDoshi26/super_extensions.svg?style=plastic&label=Stars)](https://github.com/AbhishekDoshi26/super_extensions)
+[![Super Extensions](https://github.com/AbhishekDoshi26/super_extensions/actions/workflows/main.yaml/badge.svg)](https://github.com/AbhishekDoshi26/super_extensions/actions/workflows/main.yaml)
+[![codecov](https://codecov.io/gh/AbhishekDoshi26/super_extensions/branch/main/graph/badge.svg)](https://codecov.io/gh/AbhishekDoshi26/super_extensions/branch/main)
+[![GitHub stars](https://img.shields.io/github/stars/AbhishekDoshi26/super_extensions.svg?style=plastic&label=Stars)](https://github.com/AbhishekDoshi26/super_extensions)
 
-</div>
+</p>
 
 ## Introduction
 
@@ -50,7 +43,7 @@ In this package, right now we have the following extension methods:
     - void pushReplacementNamed(String path)
     - void pushAndRemoveUntil(Widget className)
     - void pushNamedAndRemoveUntil(String path)
-    - Future<bool> maybePop()
+    - `Future<bool>` maybePop()
     - void pop()
     - void popAndPushNamed(String path)
     - EdgeInsets padding
@@ -60,7 +53,7 @@ In this package, right now we have the following extension methods:
 - **Extensions on String:**
     - String capitaliseFirstChar()
     - String capitaliseEachWordFirstChar()
-    - Future<void> copyToClipboard()
+    - `Future<void>` copyToClipboard()
       <br>
 - **Extensions on num:**
     - SizedBox hSizedBox
