@@ -27,7 +27,11 @@ jobs:
         
       # Statically analyze the Dart code for any errors.
       - name: 🧪 Run Test Cases
-        run: flutter test
+        run: flutter test --coverage
+
+      # Upload code coverage to codecov
+      - name: 🛠️ Upload coverage reports to codecov
+        uses: codecov/codecov-action@v3
         
       # Dry Run Publish.
       - name: 🛠️ Dry Run Pub Publish
