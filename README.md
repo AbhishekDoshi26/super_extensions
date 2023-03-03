@@ -1,7 +1,7 @@
 <p align="center">
 
 [![Super Extensions](https://github.com/AbhishekDoshi26/super_extensions/actions/workflows/main.yaml/badge.svg)](https://github.com/AbhishekDoshi26/super_extensions/actions/workflows/main.yaml)
-[![codecov](https://codecov.io/gh/AbhishekDoshi26/super_extensions/branch/main/graph/badge.svg)](https://codecov.io/gh/AbhishekDoshi26/super_extensions/branch/main)
+[![codecov](https://codecov.io/github/AbhishekDoshi26/super_extensions/branch/main/graph/badge.svg?token=ST07XFABBP)](https://codecov.io/github/AbhishekDoshi26/super_extensions)
 [![GitHub stars](https://img.shields.io/github/stars/AbhishekDoshi26/super_extensions.svg?style=plastic&label=Stars)](https://github.com/AbhishekDoshi26/super_extensions)
 
 </p>
