@@ -71,6 +71,28 @@ void main() {
           expect(text2.getInitials, 'J');
         },
       );
+
+      test("check string is empty or null", () {
+        const String? nullString = null;
+        expect(nullString.isNullOrEmpty(), true);
+
+        const String emptyString = "";
+        expect(emptyString.isNullOrEmpty(), true);
+
+        const String properString = "String";
+        expect(properString.isNullOrEmpty(), false);
+      });
+
+      test("check string is not null and not empty", () {
+        const String? nullString = null;
+        expect(nullString.isNotNullOrEmpty(), false);
+
+        const String emptyString = "";
+        expect(emptyString.isNotNullOrEmpty(), false);
+
+        const String properString = "String";
+        expect(properString.isNotNullOrEmpty(), true);
+      });
     },
   );
 
