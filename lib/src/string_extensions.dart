@@ -80,11 +80,18 @@ extension StringExtension on String {
   }
 }
 
+///Extension methods for String that can be null.
 extension StringExtensionWithNull on String? {
+  ///Extension method for the [String] that verifies
+  /// the string is empty or null; and return result in [bool].
+  ///
   bool isNullOrEmpty() {
     return this == null || this!.isEmpty;
   }
 
+  ///Extension method for the [String] that verifies
+  /// the string is not empty or null; and return result in [bool].
+  ///
   bool isNotNullOrEmpty() {
     return this != null && this!.isNotEmpty;
   }
