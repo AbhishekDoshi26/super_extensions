@@ -71,6 +71,17 @@ void main() {
           expect(text2.getInitials, 'J');
         },
       );
+
+      test('Ensure the number is parsed', () {
+        const number1 = '2345';
+        expect(number1.toNumber(), 2345);
+
+        const number2 = '2345.45';
+        expect(number2.toNumber(), 2345.45);
+
+        const number3 = 't45g';
+        expect(number3.toNumber(), null);
+      });
     },
   );
 
@@ -92,6 +103,16 @@ void main() {
           final box0 = 50.wSizedBox;
           expect(box0.width, 50.0);
           expect(box0.height, null);
+        },
+      );
+      test(
+        'Ensure the currency format is correct',
+        () {
+          const num currency1 = 123;
+          expect(currency1.toCurrency(), '\$123');
+
+          const num currency2 = 123.04;
+          expect(currency2.toCurrency(currencyUnit: 'Rs.'), 'Rs.123.04');
         },
       );
     },

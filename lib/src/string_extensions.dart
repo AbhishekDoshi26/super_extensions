@@ -50,6 +50,18 @@ extension StringExtension on String {
     return isNotEmpty && regex.hasMatch(trim());
   }
 
+  /// Extension method to parse integer from the string
+  /// It takes no parameters.
+  /// This is how you can use it:
+  /// ```dart
+  ///  '545'.toNumber() // 545
+  ///  '545.34'.toNumber() // 545.34
+  ///  't45g'.toNumber() // null
+  ///
+  /// ```
+  /// If the string cannot be parsed to number, it returns null
+  num? toNumber() => num.tryParse(this);
+
   /// Extension method to get the initials of a string.
   /// It takes no parameters.
   /// This is how you can use it:
