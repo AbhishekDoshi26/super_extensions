@@ -106,6 +106,16 @@ void main() {
           expect(box0.height, null);
         },
       );
+      test(
+        'Ensure the currency format is correct',
+        () {
+          const num currency1 = 123;
+          expect(currency1.toCurrency(), '\$123');
+
+          const num currency2 = 123.04;
+          expect(currency2.toCurrency(currencyUnit: 'Rs.'), 'Rs.123.04');
+        },
+      );
     },
   );
 }
