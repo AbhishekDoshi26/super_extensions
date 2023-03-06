@@ -72,8 +72,7 @@ void main() {
         },
       );
 
-      test('Ensure the number is parsed', (){
-
+      test('Ensure the number is parsed', () {
         const number1 = '2345';
         expect(number1.toNumber(), 2345);
 
