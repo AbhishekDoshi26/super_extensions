@@ -71,6 +71,18 @@ void main() {
           expect(text2.getInitials, 'J');
         },
       );
+
+      test('Ensure the number is parsed', (){
+
+        const number1 = '2345';
+        expect(number1.toNumber(), 2345);
+
+        const number2 = '2345.45';
+        expect(number2.toNumber(), 2345.45);
+
+        const number3 = 't45g';
+        expect(number3.toNumber(), null);
+      });
     },
   );
 
