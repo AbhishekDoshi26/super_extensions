@@ -71,7 +71,7 @@ void main() {
           expect(text2.getInitials, 'J');
         },
       );
-      
+
       test('Ensure valid palindroms returned correct', () {
         // palindrom check on empty string
         final isPalindrom0 = ''.isPalindrom;
