@@ -78,4 +78,18 @@ extension StringExtension on String {
       return firstLetters;
     }
   }
+
+  /// Checks if string is Palindrom.
+  bool get isPalindrom {
+    final string = toLowerCase()
+        .replaceAll(RegExp(r"\s+"), '')
+        .replaceAll(RegExp(r"[^0-9a-zA-Z]+"), "");
+    final len = string.length - 1;
+
+    for (var i = 0; i <= len; i++) {
+      if (string[i] != string[len - i]) return false;
+    }
+
+    return true;
+  }
 }
