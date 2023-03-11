@@ -26,7 +26,7 @@ extension TextWidgetExtensions on Text {
           "Part '${element.text}' it is not found in your text '$data'");
     }
 
-    parts = _sortPartsAsPerOrderInText(parts, text);
+    parts = sortPartsAsPerOrderInText(parts, text);
 
     List<Part> textPart = [];
     for (var part in parts) {
@@ -39,48 +39,49 @@ extension TextWidgetExtensions on Text {
         textPart.add(Part(text: text, style: style, onClick: () {}));
       }
     }
-    return textPart.isNotEmpty
-        ? RichText(
-            text: TextSpan(
-                children: textPart
-                    .map(
-                      (Part e) => TextSpan(
-                          text: e.text,
-                          style: e.style,
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () => e.onClick()),
-                    )
-                    .toList()),
-          )
-        : this;
+    return RichText(
+      text: TextSpan(
+          children: textPart
+              .map(
+                (Part e) => TextSpan(
+                    text: e.text,
+                    style: e.style,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => e.onClick()),
+              )
+              .toList()),
+    );
+  }
+}
+
+@visibleForTesting
+List<Part> sortPartsAsPerOrderInText(List<Part> parts, String text) {
+  for (var element in parts) {
+    var elementIndex = text.indexOf(element.text);
+    if (elementIndex.isNegative) {
+      throw ("Part '${element.text}' is not available in text or might be you have used multiple times");
+    }
   }
 
-  List<Part> _sortPartsAsPerOrderInText(List<Part> parts, String text) {
-    List<int> partStartingIndexes = [];
-    for (var element in parts) {
-      var elementIndex = text.indexOf(element.text);
-      if (elementIndex.isNegative) {
-        throw ("Part '${element.text}' is not available in text or might be you have used multiple times");
-      }
-      partStartingIndexes.add(text.indexOf(element.text));
-      //Replace with blanks, so if other part with same text exists then it follows the next match.
-      text = text.replaceFirst(element.text, " " * element.text.length);
-    }
-    var index = 0;
-    partStartingIndexes.sort(
-      (a, b) {
-        var result = a.compareTo(b);
-        if (!result.isNegative) {
-          var temp = parts[index];
-          parts[index] = parts[index + 1];
-          parts[index + 1] = temp;
-        }
-        index += 1;
-        return result;
-      },
-    );
-    return parts;
-  }
+  parts.sort(
+    (a, b) {
+      var indexOfA = text.indexOf(a.text);
+      var indexOfB = text.indexOf(b.text);
+      var result = indexOfA.compareTo(indexOfB);
+      /*if (!result.isNegative) {
+        var aTempIndex = parts.indexWhere((element) {
+          return element.text == a.text;
+        });
+        var bTempIndex = parts.indexWhere((element) {
+          return element.text == b.text;
+        });
+        parts[aTempIndex] = b;
+        parts[bTempIndex] = a;
+      }*/
+      return result;
+    },
+  );
+  return parts;
 }
 
 class Part {
