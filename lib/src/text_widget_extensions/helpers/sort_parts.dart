@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
 import '../models/part.dart';
 
-@visibleForTesting
 List<Part> sortPartsAsPerOrderInText(List<Part> parts, String text) {
   for (var element in parts) {
     var elementIndex = text.indexOf(element.text);
