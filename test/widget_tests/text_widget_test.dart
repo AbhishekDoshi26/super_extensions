@@ -12,7 +12,7 @@ void main() {
         MaterialApp(
           home: Scaffold(
             body: SafeArea(
-              child: Text(text).withSpacialParts([
+              child: Text(text).withClickableParts([
                 Part(
                     text: "terms & conditions",
                     onClick: () {},
@@ -57,7 +57,7 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            child: Text(text).withSpacialParts([]),
+            child: Text(text).withClickableParts([]),
           ),
         ),
       ),
@@ -72,7 +72,7 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            child: Text(text).withSpacialParts([
+            child: Text(text).withClickableParts([
               Part(
                   text: "and",
                   onClick: () {},
@@ -104,7 +104,7 @@ void main() {
     (tester) async {
       var text = "Accept terms & conditions and privacy policy";
       expect(
-          () => Text(text).withSpacialParts([
+          () => Text(text).withClickableParts([
                 Part(
                     text: "terms & conditions",
                     onClick: () {},

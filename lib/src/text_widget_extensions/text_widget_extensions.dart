@@ -1,13 +1,16 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../../super_extensions.dart';
+import 'helpers/sort_parts.dart';
+
 extension TextWidgetExtensions on Text {
   ///Extensions method to make specific part of [Text] clickable or in different style.
   ///
   ///Example:
   ///         Text(
   ///           "Accept term & conditions to continue",
-  ///         ).withSpacialParts([
+  ///         ).withClickableParts([
   ///           Part(
   ///             text: "Term & conditions",
   ///             onClick: () {
@@ -16,7 +19,7 @@ extension TextWidgetExtensions on Text {
   ///             style: const TextStyle(color: Colors.blue),
   ///           ),
   ///         ])
-  Widget withSpacialParts(List<Part> parts) {
+  Widget withClickableParts(List<Part> parts) {
     String text = data ?? "";
     //If text is empty or there is no clickable parts to make then return original widget
     if (text.isEmpty || parts.isEmpty) return this;
@@ -52,47 +55,4 @@ extension TextWidgetExtensions on Text {
               .toList()),
     );
   }
-}
-
-@visibleForTesting
-List<Part> sortPartsAsPerOrderInText(List<Part> parts, String text) {
-  for (var element in parts) {
-    var elementIndex = text.indexOf(element.text);
-    if (elementIndex.isNegative) {
-      throw ("Part '${element.text}' is not available in text or might be you have used multiple times");
-    }
-  }
-
-  parts.sort(
-    (a, b) {
-      var indexOfA = text.indexOf(a.text);
-      var indexOfB = text.indexOf(b.text);
-      var result = indexOfA.compareTo(indexOfB);
-      /*if (!result.isNegative) {
-        var aTempIndex = parts.indexWhere((element) {
-          return element.text == a.text;
-        });
-        var bTempIndex = parts.indexWhere((element) {
-          return element.text == b.text;
-        });
-        parts[aTempIndex] = b;
-        parts[bTempIndex] = a;
-      }*/
-      return result;
-    },
-  );
-  return parts;
-}
-
-class Part {
-  String text;
-  TextStyle? style;
-  Function onClick;
-
-  ///*[text]*: text that you want to make special.
-  ///
-  ///*[style]*: Style of special part(Optional).
-  ///
-  ///*[onClick]*: Action to perform when special part clicked.
-  Part({required this.text, required this.onClick, this.style});
 }

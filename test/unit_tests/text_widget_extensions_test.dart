@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:super_extensions/src/text_widget_extensions/helpers/sort_parts.dart';
 import 'package:super_extensions/super_extensions.dart';
 
 void main() {
