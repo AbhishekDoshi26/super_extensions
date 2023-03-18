@@ -58,6 +58,9 @@ In this package, right now we have the following extension methods:
     - Future<void> copyToClipboard()
     - bool isPalindrom
       <br>
+- **Extensions on String?:**
+    - String orEmptyStringIfNull()
+    <br>
 - **Extensions on num:**
     - SizedBox hSizedBox
     - SizedBox wSizedBox
