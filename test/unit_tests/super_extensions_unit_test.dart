@@ -116,4 +116,20 @@ void main() {
       );
     },
   );
+
+  group(
+    'Null-String-extension tests',
+    () {
+      test(
+        'Ensure that it will return the same string or empty if string is null',
+        () {
+          const String? str0 = null;
+          expect(str0.emptyStringIfNull(), "");
+
+          const String str1 = "test";
+          expect(str1.emptyStringIfNull(), "test");
+        },
+      );
+    },
+  );
 }
