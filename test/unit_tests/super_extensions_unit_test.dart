@@ -72,24 +72,24 @@ void main() {
         },
       );
 
-      test('Ensure valid palindroms returned correct', () {
-        // palindrom check on empty string
-        final isPalindrom0 = ''.isPalindrom;
+      test('Ensure valid palindromes returned correct', () {
+        // palindrome check on empty string
+        final isPalindrome0 = ''.isPalindrome;
         // An empty string is also a palindrome, since it "reads" the same forward and backward.
-        expect(isPalindrom0, true);
+        expect(isPalindrome0, true);
 
-        // palindrom check on odd number of characters
-        final isPalindrom1 = 'abcba'.isPalindrom;
-        expect(isPalindrom1, true);
+        // palindrome check on odd number of characters
+        final isPalindrome1 = 'abcba'.isPalindrome;
+        expect(isPalindrome1, true);
 
-        // palindrom check on even number of characters
-        final isPalindrom2 = 'abccba'.isPalindrom;
-        expect(isPalindrom2, true);
+        // palindrome check on even number of characters
+        final isPalindrome2 = 'abccba'.isPalindrome;
+        expect(isPalindrome2, true);
       });
 
-      test('Ensure non valid palindroms returned correct', () {
-        final isPalindrom0 = 'abcd'.isPalindrom;
-        expect(isPalindrom0, false);
+      test('Ensure non valid palindromes returned correct', () {
+        final isPalindrome0 = 'abcd'.isPalindrome;
+        expect(isPalindrome0, false);
       });
     },
   );

@@ -56,7 +56,7 @@ In this package, right now we have the following extension methods:
     - String capitaliseFirstChar()
     - String capitaliseEachWordFirstChar()
     - Future<void> copyToClipboard()
-    - bool isPalindrom
+    - bool isPalindrome
       <br>
 - **Extensions on num:**
     - SizedBox hSizedBox
