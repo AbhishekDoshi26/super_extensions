@@ -79,8 +79,8 @@ extension StringExtension on String {
     }
   }
 
-  /// Checks if string is Palindrom.
-  bool get isPalindrom {
+  /// Checks if string is a palindrome.
+  bool get isPalindrome {
     final string = toLowerCase()
         .replaceAll(RegExp(r"\s+"), '')
         .replaceAll(RegExp(r"[^0-9a-zA-Z]+"), "");
