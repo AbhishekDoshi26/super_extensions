@@ -60,7 +60,7 @@ void main() {
 
       test(
         'Ensure strings are reversed',
-            () {
+        () {
           const string0 = 'Hello world.';
           expect(string0.reversed, '.dlrow olleH');
 
