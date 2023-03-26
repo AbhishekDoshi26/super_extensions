@@ -103,7 +103,5 @@ extension StringExtension on String {
   ///     onPressed: null,
   ///    );
   /// ```
-  String get reversed {
-    return String.fromCharCodes(runes.toList().reversed);
-  }
+  String get reversed => String.fromCharCodes(runes.toList().reversed);
 }
