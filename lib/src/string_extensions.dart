@@ -92,4 +92,16 @@ extension StringExtension on String {
 
     return true;
   }
+
+  /// Extension method to reverse a string.
+  /// It takes no parameters.
+  /// This is how you can use it:
+  /// ```dart
+  /// String text = "Hello world.";
+  ///  TextButton(
+  ///     child: Text(text.reversed),
+  ///     onPressed: null,
+  ///    );
+  /// ```
+  String get reversed => String.fromCharCodes(runes.toList().reversed);
 }

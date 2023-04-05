@@ -59,6 +59,17 @@ void main() {
       );
 
       test(
+        'Ensure strings are reversed',
+        () {
+          const string0 = 'Hello world.';
+          expect(string0.reversed, '.dlrow olleH');
+
+          const string1 = 'jUsT a raN  dom teXT';
+          expect(string1.reversed, 'TXet mod  Nar a TsUj');
+        },
+      );
+
+      test(
         'Ensure appropriate initials from strings',
         () {
           const text0 = 'first test ';
