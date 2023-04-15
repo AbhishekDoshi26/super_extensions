@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+/// Extension on [Iterable] to add a separator between each widget using generators.
 extension IterableExt on Iterable<Widget> {
   Iterable<Widget> separator(Widget element) sync* {
     final iterator = this.iterator;
