@@ -62,6 +62,8 @@ In this package, right now we have the following extension methods:
 - **Extensions on num:**
     - SizedBox hSizedBox
     - SizedBox wSizedBox
+- **Extension on Iterable**
+    - Iterable<Widget> separator(Widget element)
 
 ## Contribution Information
 
