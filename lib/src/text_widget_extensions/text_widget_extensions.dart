@@ -10,9 +10,10 @@ extension TextWidgetExtensions on Text {
   ///Example:
   ///         Text(
   ///           "Accept term & conditions to continue",
+  ///            style: TextStyle(color: Colors.black),
   ///         ).withClickableParts([
   ///           Part(
-  ///             text: "Term & conditions",
+  ///             text: "term & conditions",
   ///             onClick: () {
   ///               print("term & condition clicked");
   ///             },

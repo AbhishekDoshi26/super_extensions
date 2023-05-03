@@ -1,4 +1,4 @@
-import 'package:example/extension_examples/context_extension_example.dart';
+import 'package:example/extension_examples/extension_examples.dart';
 import 'package:flutter/material.dart';
 import 'package:super_extensions/super_extensions.dart';
 
@@ -8,28 +8,38 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TextButton(
-              onPressed: () {
-                context.push(const ContextExtensionExample());
-              },
-              child: const Text('BuildContext Extensions'),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Number Extensions'),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('String Extensions'),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Text Widget Extensions'),
-            ),
-          ].separator(const SizedBox(height: 8.0)).toList(),
+      appBar: AppBar(
+        title: const Text('Super Extensions'),
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  context.push(const ContextExtensionExample());
+                },
+                child: const Text('BuildContext Extensions'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  context.push(
+                    const StringExtensionExample(
+                      data: 'super extensions',
+                      email: 'abc@gmail.com',
+                    ),
+                  );
+                },
+                child: const Text('String Extensions'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  context.push(const TextWidgetExtensionExample());
+                },
+                child: const Text('Text Widget Extensions'),
+              ),
+            ].separator(const SizedBox(height: 8.0)).toList(),
+          ),
         ),
       ),
     );

@@ -9,19 +9,19 @@ void main() {
         'Ensure only the first character of a string is capitalized',
         () {
           // ensure empty string returns empty
-          final text0 = ''.capitaliseFirstChar();
+          final text0 = ''.capitaliseFirstChar;
           expect(text0.isEmpty, true);
 
           // operation on single word
-          final text1 = 'test'.capitaliseFirstChar();
+          final text1 = 'test'.capitaliseFirstChar;
           expect(text1, 'Test');
 
           // operation on a group of words/sentence
-          final text2 = 'hello world'.capitaliseFirstChar();
+          final text2 = 'hello world'.capitaliseFirstChar;
           expect(text2, 'Hello world');
 
           // returns back capitalized string
-          final text3 = 'Test'.capitaliseFirstChar();
+          final text3 = 'Test'.capitaliseFirstChar;
           expect(text3, 'Test');
         },
       );
@@ -30,19 +30,19 @@ void main() {
         'Ensure first letter of a group of string(s), also known as sentences, are capitalized',
         () {
           // ensure empty string returns empty
-          final text0 = ''.capitaliseFirstChar();
+          final text0 = ''.capitaliseFirstChar;
           expect(text0.isEmpty, true);
 
           // operation on single word
-          final text1 = 'test'.capitaliseEachWordFirstChar();
+          final text1 = 'test'.capitaliseEachWordFirstChar;
           expect(text1, 'Test');
 
           // operation on a group of words/sentence
-          final text2 = 'hello world'.capitaliseEachWordFirstChar();
+          final text2 = 'hello world'.capitaliseEachWordFirstChar;
           expect(text2, 'Hello World');
 
           // returns back capitalized string
-          final text3 = 'Hello   World'.capitaliseEachWordFirstChar();
+          final text3 = 'Hello   World'.capitaliseEachWordFirstChar;
           expect(text3, 'Hello World');
         },
       );
