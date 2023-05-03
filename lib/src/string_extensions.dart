@@ -4,17 +4,17 @@ import 'package:flutter/services.dart' show Clipboard, ClipboardData;
 extension StringExtension on String {
   ///Extension method on String to capitalise first character of the string.
   ///
-  String capitaliseFirstChar() =>
+  String get capitaliseFirstChar =>
       isEmpty ? this : this[0].toUpperCase() + substring(1);
 
   ///Extension method on String to capitalise first character
   ///of each word of the string.
   ///
-  String capitaliseEachWordFirstChar() => isEmpty
+  String get capitaliseEachWordFirstChar => isEmpty
       ? this
       : replaceAll(RegExp(' +'), ' ')
           .split(' ')
-          .map((str) => str.capitaliseFirstChar())
+          .map((str) => str.capitaliseFirstChar)
           .join(' ');
 
   /// Extension method to copy a string to clipboard.
