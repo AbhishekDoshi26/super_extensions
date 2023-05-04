@@ -1,6 +1,6 @@
 name: super_extensions
-description: We probably use lots of extension methods in our project. So, this package combines all the extension methods that are used on daily basis and make them available to you under a single package so that you can reuse them in multiple packages.
-version: 0.0.1
+description: A package that supports most commonly used extension methods
+version: 0.0.3
 repository: 'https://github.com/AbhishekDoshi26/super_extensions'
 
 environment:
