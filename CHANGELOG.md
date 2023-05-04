@@ -5,3 +5,6 @@
 
 ## 0.0.2
 * Fixed pub score
+
+## 0.0.3
+* Fixed readme
