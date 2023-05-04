@@ -45,7 +45,7 @@ In this package, right now we have the following extension methods:
     - void pushReplacementNamed(String path)
     - void pushAndRemoveUntil(Widget className)
     - void pushNamedAndRemoveUntil(String path)
-    - Future<bool> maybePop()
+    - `Future<bool> maybePop()`
     - void pop()
     - void popAndPushNamed(String path)
     - EdgeInsets padding
@@ -55,7 +55,7 @@ In this package, right now we have the following extension methods:
 - **Extensions on String:**
     - String capitaliseFirstChar()
     - String capitaliseEachWordFirstChar()
-    - Future<void> copyToClipboard()
+    - `Future<void> copyToClipboard()`
     - bool isPalindrome
     - String reversed
     <br>
@@ -64,7 +64,7 @@ In this package, right now we have the following extension methods:
     - SizedBox wSizedBox
     <br>
 - **Extension on Iterable**
-    - Iterable<Widget> separator(Widget element)
+    - `Iterable<Widget> separator(Widget element)`
 
 ## Contribution Information
 
