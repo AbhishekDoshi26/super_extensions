@@ -21,6 +21,10 @@ extension ContextExtension on BuildContext {
   ///
   void showSnackBar(SnackBar snackBar) =>
       ScaffoldMessenger.of(this).showSnackBar(snackBar);
+  
+  void hideSnackBar({SnackBarClosedReason reason = SnackBarClosedReason.hide}) => ScaffoldMessenger.of(this).hideCurrentSnackBar(
+        reason: reason,
+      );
 
   ///Extension method on BuildContext to show a dialog.
   ///It takes [child] as the parameter of type Widget.
