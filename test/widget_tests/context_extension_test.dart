@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -68,8 +70,8 @@ void main() {
                     TextButton(
                       key: tapTarget,
                       onPressed: () => context.showNewDialog(
-                        Column(
-                          children: const [
+                        const Column(
+                          children: [
                             Text(helloWorld),
                           ],
                         ),

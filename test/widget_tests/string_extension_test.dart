@@ -22,6 +22,7 @@ void main() {
   testWidgets(
     'Check if text is successfully copied to clipboard',
     (tester) async {
+      // ignore: deprecated_member_use
       SystemChannels.platform.setMockMethodCallHandler(handler);
       const Key tapTarget = Key('tap-target');
 

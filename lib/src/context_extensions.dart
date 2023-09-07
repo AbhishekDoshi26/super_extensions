@@ -33,52 +33,52 @@ extension ContextExtension on BuildContext {
   ///Extension method on BuildContext to get the screenHeight.
   ///It returns MediaQuery.of(context).size.height
   ///
-  double get screenHeight => MediaQuery.of(this).size.height;
+  double get screenHeight => MediaQuery.sizeOf(this).height;
 
   ///Extension method on BuildContext to get the screenWidth.
   ///It returns MediaQuery.of(context).size.width
   ///
-  double get screenWidth => MediaQuery.of(this).size.width;
+  double get screenWidth => MediaQuery.sizeOf(this).width;
 
   ///Extension method on BuildContext to get the screen aspectRatio.
   ///It returns MediaQuery.of(context).size.aspectRatio
   ///
-  double get aspectRatio => MediaQuery.of(this).size.aspectRatio;
+  double get aspectRatio => MediaQuery.sizeOf(this).aspectRatio;
 
   ///Extension method on BuildContext that returns whether the screen
   ///size is of mobile or not.
   ///It returns true if MediaQuery.of(context).size.width<650, else returns false.
   ///
-  bool get isMobile => MediaQuery.of(this).size.width < 650;
+  bool get isMobile => MediaQuery.sizeOf(this).width < 650;
 
   /// Extension method on BuildContext for getting padding
   /// return `EdgeInsets`
   ///
-  EdgeInsets get padding => MediaQuery.of(this).padding;
+  EdgeInsets get padding => MediaQuery.paddingOf(this);
 
   /// Extension method on BuildContext to for getting viewPadding
   /// return `EdgeInsets`
   ///
-  EdgeInsets get viewPadding => MediaQuery.of(this).viewPadding;
+  EdgeInsets get viewPadding => MediaQuery.viewPaddingOf(this);
 
   /// Extension method on BuildContext for viewInsets
   /// returns `EdgeInsets`
   ///
-  EdgeInsets get viewInsets => MediaQuery.of(this).viewInsets;
+  EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
 
   ///Extension method on BuildContext that returns whether the screen
   ///size is of tablet or not.
   ///It returns true if 1024>MediaQuery.of(context).size.width>=650, else returns false.
   ///
   bool get isTablet =>
-      MediaQuery.of(this).size.width < 1024 &&
-      MediaQuery.of(this).size.width >= 650;
+      MediaQuery.sizeOf(this).width < 1024 &&
+      MediaQuery.sizeOf(this).width >= 650;
 
   ///Extension method on BuildContext that returns whether the screen
   ///size is of desktop or not.
   ///It returns true if MediaQuery.of(context).size.width>=1024, else returns false.
   ///
-  bool get isDesktop => MediaQuery.of(this).size.width >= 1024;
+  bool get isDesktop => MediaQuery.sizeOf(this).width >= 1024;
 
   ///Extension method on BuildContext to push to [className]
   ///using Navigator 1.0
