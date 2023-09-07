@@ -11,3 +11,6 @@
 
 ## 0.0.4
 * Used new APIs for `MediaQuery`. Now, it's using `MediaQuery.sizeOf()` and other related APIs.
+
+## 0.0.5
+* Fix pipeline and updated documentations
