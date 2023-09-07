@@ -8,3 +8,6 @@
 
 ## 0.0.3
 * Fixed readme
+
+## 0.0.4
+* Used new APIs for `MediaQuery`. Now, it's using `MediaQuery.sizeOf()` and other related APIs.
