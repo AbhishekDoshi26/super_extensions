@@ -14,3 +14,6 @@
 
 ## 0.0.5
 * Fix pipeline and updated documentations
+
+## 0.0.6
+* Fixed static analysis and few bugs
