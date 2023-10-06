@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 6.3.0">
+  <meta name="description" content="super_extensions API docs, for the Dart programming language.">
+  <title>super_extensions - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">super_extensions package</li>
+  </ol>
+  <div class="self-name">super_extensions</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <p align="center">
+</p><p><a href="https://github.com/AbhishekDoshi26/super_extensions/actions/workflows/main.yaml"><img src="https://github.com/AbhishekDoshi26/super_extensions/actions/workflows/main.yaml/badge.svg" alt="Super Extensions"></a>
+<a href="https://codecov.io/github/AbhishekDoshi26/super_extensions"><img src="https://codecov.io/github/AbhishekDoshi26/super_extensions/branch/main/graph/badge.svg?token=ST07XFABBP" alt="codecov"></a></p>
+<p><a href="https://gitHub.com/AbhishekDoshi26/super_extensions/graphs/contributors/"><img src="https://img.shields.io/github/contributors/AbhishekDoshi26/super_extensions.svg?style=plastic&amp;label=Contributors" alt="GitHub contributors"></a>
+<a href="https://github.com/AbhishekDoshi26/super_extensions"><img src="https://img.shields.io/github/stars/AbhishekDoshi26/super_extensions.svg?style=plastic&amp;label=Stars" alt="GitHub stars"></a></p>
+<p></p>
+<h2 id="introduction">Introduction</h2>
+<p>We all love shortcode that does the work. So dart has provided a great feature called Extension Methods which you can
+use on different data types! What are Extension Methods exactly? Extension methods add functionality to existing
+libraries. You might use extension methods without even knowing it. For example, when you use code completion in an IDE,
+it suggests extension methods alongside regular
+methods. <a href="https://dart.dev/guides/language/extension-methods" title="(Reference)">(Reference)</a></p>
+<h2 id="what-is-this-package-about">What is this package about?</h2>
+<p>We probably use lots of extension methods in our project. So, this package combines all the extension methods that are
+used on daily basis and make them available to you under a single package so that you can reuse them in multiple
+packages.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>To learn more about Extension Methods, feel free to check
+this <a href="https://medium.com/google-developer-experts/extension-methods-eb7a89a055f8" title="article">article</a>.</p>
+<h2 id="list-of-extensions">List of Extensions</h2>
+<p>In this package, right now we have the following extension methods:</p>
+<ul>
+<li><strong>Extensions on BuildContext:</strong>
+<ul>
+<li>void showSnackBar(SnackBar snackBar)</li>
+<li>void showNewDialog(Widget child)</li>
+<li>double get screenHeight</li>
+<li>double get screenWidth</li>
+<li>bool get isMobile</li>
+<li>bool get isTablet</li>
+<li>bool get isDesktop</li>
+<li>void push(Widget className)</li>
+<li>void pushReplacement(Widget className)</li>
+<li>void pushNamed(String path)</li>
+<li>void pushReplacementNamed(String path)</li>
+<li>void pushAndRemoveUntil(Widget className)</li>
+<li>void pushNamedAndRemoveUntil(String path)</li>
+<li><code>Future&lt;bool&gt; maybePop()</code></li>
+<li>void pop()</li>
+<li>void popAndPushNamed(String path)</li>
+<li>EdgeInsets padding</li>
+<li>EdgeInsets viewPadding</li>
+<li>EdgeInsets viewInsets
+<br></li>
+</ul>
+</li>
+<li><strong>Extensions on String:</strong>
+<ul>
+<li>String capitaliseFirstChar()</li>
+<li>String capitaliseEachWordFirstChar()</li>
+<li><code>Future&lt;void&gt; copyToClipboard()</code></li>
+<li>bool isPalindrome</li>
+<li>String reversed
+<br></li>
+</ul>
+</li>
+<li><strong>Extensions on num:</strong>
+<ul>
+<li>SizedBox hSizedBox</li>
+<li>SizedBox wSizedBox
+<br></li>
+</ul>
+</li>
+<li><strong>Extension on Iterable</strong>
+<ul>
+<li><code>Iterable&lt;Widget&gt; separator(Widget element)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="contribution-information">Contribution Information</h2>
+<p>If you feel that there can be any other extension methods, feel free to create a PR for the same and I would love to add
+it to the package 💙</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="super_extensions">
+  <span class="name"><a href="super_extensions/super_extensions-library.html">super_extensions</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">super_extensions package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">super_extensions</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="super_extensions/super_extensions-library.html">super_extensions</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    super_extensions
+      0.0.5
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

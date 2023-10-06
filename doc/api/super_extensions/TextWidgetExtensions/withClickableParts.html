@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the withClickableParts method from the TextWidgetExtensions extension, for the Dart programming language.">
+  <title>withClickableParts method - TextWidgetExtensions extension - super_extensions library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">super_extensions</a></li>
+    <li><a href="../../super_extensions/super_extensions-library.html">super_extensions</a></li>
+    <li><a href="../../super_extensions/TextWidgetExtensions.html">TextWidgetExtensions</a></li>
+    <li class="self-crumb">withClickableParts method</li>
+  </ol>
+  <div class="self-name">withClickableParts</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="super_extensions&#47;TextWidgetExtensions-extension-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-method">withClickableParts</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype">Widget</span>
+<span class="name ">withClickableParts</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="withClickableParts-param-parts"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../super_extensions/Part-class.html">Part</a></span>&gt;</span></span> <span class="parameter-name">parts</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Extensions method to make specific part of <code>Text</code> clickable or in different style.</p>
+<p>Example:
+Text(
+"Accept term &amp; conditions to continue",
+style: TextStyle(color: Colors.black),
+).withClickableParts(<a href="../../super_extensions/Part-class.html">
+          Part(
+            text: "term &amp; conditions",
+            onClick: () {
+              print("term &amp; condition clicked");
+            },
+            style: const TextStyle(color: Colors.blue),
+          ),
+        </a>)</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Widget withClickableParts(List&lt;Part&gt; parts) {
+  String text = data ?? &quot;&quot;;
+  &#47;&#47;If text is empty or there is no clickable parts to make then return original widget
+  if (text.isEmpty || parts.isEmpty) return this;
+  &#47;&#47;Check for all the parts are available in text.
+  for (var element in parts) {
+    assert(text.contains(element.text),
+        &quot;Part &#39;${element.text}&#39; it is not found in your text &#39;$data&#39;&quot;);
+  }
+
+  parts = sortPartsAsPerOrderInText(parts, text);
+
+  List&lt;Part&gt; textPart = [];
+  for (var part in parts) {
+    String textBeforeOfPart = text.substring(0, text.indexOf(part.text));
+    text = text.substring(textBeforeOfPart.length, text.length);
+    text = text.replaceFirst(part.text, &#39;&#39;);
+    textPart.add(Part(text: textBeforeOfPart, style: style, onClick: () {}));
+    textPart.add(part);
+    if (parts.last == part) {
+      textPart.add(Part(text: text, style: style, onClick: () {}));
+    }
+  }
+  return RichText(
+    text: TextSpan(
+        children: textPart
+            .map(
+              (Part e) =&gt; TextSpan(
+                  text: e.text,
+                  style: e.style,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () =&gt; e.onClick()),
+            )
+            .toList()),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">super_extensions</a></li>
+    <li><a href="../../super_extensions/super_extensions-library.html">super_extensions</a></li>
+    <li><a href="../../super_extensions/TextWidgetExtensions.html">TextWidgetExtensions</a></li>
+    <li class="self-crumb">withClickableParts method</li>
+</ol>
+
+
+    <h5>TextWidgetExtensions extension</h5>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    super_extensions
+      0.0.5
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
