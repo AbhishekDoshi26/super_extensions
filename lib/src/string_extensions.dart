@@ -4,18 +4,13 @@ import 'package:flutter/services.dart' show Clipboard, ClipboardData;
 extension StringExtension on String {
   ///Extension method on String to capitalise first character of the string.
   ///
-  String get capitaliseFirstChar =>
-      isEmpty ? this : this[0].toUpperCase() + substring(1);
+  String get capitaliseFirstChar => isEmpty ? this : this[0].toUpperCase() + substring(1);
 
   ///Extension method on String to capitalise first character
   ///of each word of the string.
   ///
-  String get capitaliseEachWordFirstChar => isEmpty
-      ? this
-      : replaceAll(RegExp(' +'), ' ')
-          .split(' ')
-          .map((str) => str.capitaliseFirstChar)
-          .join(' ');
+  String get capitaliseEachWordFirstChar =>
+      isEmpty ? this : replaceAll(RegExp(' +'), ' ').split(' ').map((str) => str.capitaliseFirstChar).join(' ');
 
   /// Extension method to copy a string to clipboard.
   /// It takes no parameters.
@@ -27,8 +22,7 @@ extension StringExtension on String {
   ///     onPressed: () => text.copyToClipboard(),
   ///    );
   /// ```
-  Future<void> copyToClipboard() =>
-      Clipboard.setData(ClipboardData(text: this));
+  Future<void> copyToClipboard() => Clipboard.setData(ClipboardData(text: this));
 
   /// Extension method to check if a string is a valid email.
   /// You can pass a custom [emailPattern] as a parameter.
@@ -81,9 +75,7 @@ extension StringExtension on String {
 
   /// Checks if string is a palindrome.
   bool get isPalindrome {
-    final string = toLowerCase()
-        .replaceAll(RegExp(r"\s+"), '')
-        .replaceAll(RegExp(r"[^0-9a-zA-Z]+"), "");
+    final string = toLowerCase().replaceAll(RegExp(r"\s+"), '').replaceAll(RegExp(r"[^0-9a-zA-Z]+"), "");
     final len = string.length - 1;
 
     for (var i = 0; i <= len; i++) {
@@ -104,4 +96,10 @@ extension StringExtension on String {
   ///    );
   /// ```
   String get reversed => String.fromCharCodes(runes.toList().reversed);
+
+  /// Extension method to find out url from a given string
+///given a string it will split the string and return the url
+  String get getUrl => split(' ').firstWhere(
+        (element) => element.contains('http'),
+      );
 }
