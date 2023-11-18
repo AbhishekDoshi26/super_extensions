@@ -2,6 +2,8 @@ import 'package:example/extension_examples/extension_examples.dart';
 import 'package:flutter/material.dart';
 import 'package:super_extensions/super_extensions.dart';
 
+import 'extension_examples/widget_extension_example.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -37,6 +39,12 @@ class HomePage extends StatelessWidget {
                   context.push(const TextWidgetExtensionExample());
                 },
                 child: const Text('Text Widget Extensions'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  context.push(const WidgetExtensionExample());
+                },
+                child: const Text('Widget Extensions'),
               ),
             ].separator(const SizedBox(height: 8.0)).toList(),
           ),

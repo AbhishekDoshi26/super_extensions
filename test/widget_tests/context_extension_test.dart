@@ -752,11 +752,10 @@ class _TestPageTwo extends StatelessWidget {
   static const routeNameTwo = '/test-page-three';
 
   const _TestPageTwo({
-    Key? key,
     required this.text,
     this.buttonKey,
     this.buttonOnTap,
-  }) : super(key: key);
+  });
   final String text;
   final Key? buttonKey;
   final Function(BuildContext)? buttonOnTap;
