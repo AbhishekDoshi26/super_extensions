@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:super_extensions/src/widget_extention.dart';
+import 'package:super_extensions/src/widget_extension.dart';
 
 void main() {
-  group("widget_extention tests", () {
+  group("widget_extension tests", () {
     testWidgets(
         'paddingDirectional should add directional padding to each widget',
         (WidgetTester tester) async {

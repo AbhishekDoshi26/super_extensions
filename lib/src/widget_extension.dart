@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Extension to add padding to a list of widgets.
-extension PaddingExtentions on List<Widget> {
+extension PaddingExtensions on List<Widget> {
   /// Adds directional padding to each widget in the list.
   /// Default value set to 0.0
   ///
