@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the maybePop method from the ContextExtension extension, for the Dart programming language.">
-  <title>maybePop method - ContextExtension extension - super_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the paddingAll method from the PaddingExtentions extension, for the Dart programming language.">
+  <title>paddingAll method - PaddingExtentions extension - super_extensions library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">super_extensions</a></li>
     <li><a href="../../super_extensions/super_extensions-library.html">super_extensions</a></li>
-    <li><a href="../../super_extensions/ContextExtension.html">ContextExtension</a></li>
-    <li class="self-crumb">maybePop method</li>
+    <li><a href="../../super_extensions/PaddingExtentions.html">PaddingExtentions</a></li>
+    <li class="self-crumb">paddingAll method</li>
   </ol>
-  <div class="self-name">maybePop</div>
+  <div class="self-name">paddingAll</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,32 +54,44 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="super_extensions&#47;ContextExtension-extension-sidebar.html"
+      data-above-sidebar="super_extensions&#47;PaddingExtentions-extension-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">maybePop</span> method 
+<h1><span class="kind-method">paddingAll</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
-<span class="name ">maybePop</span>(<wbr>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span></span>
+<span class="name ">paddingAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="paddingAll-param-padding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">padding</span></span></li>
+</ol>)
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Extension method on BuildContext to pop the current and return true
-if a popping event is possible and false if it's not using Navigator 1.0</p>
+  <p>Adds the same padding to all sides of each widget in the list.
+Default Value set to 0.
+Parameters:</p>
+<ul>
+<li><code>padding</code>: The padding value for all sides.</li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;bool&gt; maybePop() =&gt; Navigator.of(this).maybePop();</code></pre>
+  <pre class="language-dart"><code class="language-dart">List&lt;Widget&gt; paddingAll(double padding) {
+  return map(
+    (e) =&gt; Padding(
+      padding: EdgeInsets.all(padding),
+      child: e,
+    ),
+  ).toList();
+}</code></pre>
 </section>
 
 
@@ -96,12 +108,12 @@ if a popping event is possible and false if it's not using Navigator 1.0</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">super_extensions</a></li>
     <li><a href="../../super_extensions/super_extensions-library.html">super_extensions</a></li>
-    <li><a href="../../super_extensions/ContextExtension.html">ContextExtension</a></li>
-    <li class="self-crumb">maybePop method</li>
+    <li><a href="../../super_extensions/PaddingExtentions.html">PaddingExtentions</a></li>
+    <li class="self-crumb">paddingAll method</li>
 </ol>
 
 
-    <h5>ContextExtension extension</h5>
+    <h5>PaddingExtentions extension</h5>
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
