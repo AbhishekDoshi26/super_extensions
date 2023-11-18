@@ -65,6 +65,9 @@ In this package, right now we have the following extension methods:
     <br>
 - **Extension on Iterable**
     - `Iterable<Widget> separator(Widget element)`
+    - `Iterable<Widget> paddingAll(List<Widget> element)`
+    - `Iterable<Widget> paddingSymmetric(List<Widget> element)`
+    - `Iterable<Widget> paddingDirectional(List<Widget> element)`
 
 ## Contribution Information
 
