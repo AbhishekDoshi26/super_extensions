@@ -274,7 +274,7 @@ void main() {
   testWidgets(
     'Check if device is desktop using size constraints',
     (tester) async {
-      binding.window.physicalSizeTestValue = const Size(1024, 1500);
+      binding.window.physicalSizeTestValue = const Size(1028, 1500);
       binding.window.devicePixelRatioTestValue = 1.0;
 
       await tester.pumpWidget(

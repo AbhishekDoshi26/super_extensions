@@ -68,17 +68,17 @@ extension ContextExtension on BuildContext {
 
   ///Extension method on BuildContext that returns whether the screen
   ///size is of tablet or not.
-  ///It returns true if 1024>MediaQuery.of(context).size.width>=650, else returns false.
+  ///It returns true if 1024=>MediaQuery.of(context).size.width>=650, else returns false.
   ///
   bool get isTablet =>
-      MediaQuery.sizeOf(this).width < 1024 &&
+      MediaQuery.sizeOf(this).width <= 1024 &&
       MediaQuery.sizeOf(this).width >= 650;
 
   ///Extension method on BuildContext that returns whether the screen
   ///size is of desktop or not.
   ///It returns true if MediaQuery.of(context).size.width>=1024, else returns false.
   ///
-  bool get isDesktop => MediaQuery.sizeOf(this).width >= 1024;
+  bool get isDesktop => MediaQuery.sizeOf(this).width > 1024;
 
   ///Extension method on BuildContext to push to [className]
   ///using Navigator 1.0

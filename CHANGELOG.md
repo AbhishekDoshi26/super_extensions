@@ -17,3 +17,6 @@
 
 ## 0.0.6
 * Fixed static analysis and few bugs
+
+## 0.0.7
+* Updated isTablet breakpoint
