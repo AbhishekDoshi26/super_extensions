@@ -138,4 +138,7 @@ extension ContextExtension on BuildContext {
   ///and push the [path] using Navigator 1.0
   ///
   void popAndPushNamed(String path) => Navigator.of(this).popAndPushNamed(path);
+
+  /// Get [ColorScheme] of the current [BuildContext].
+  ColorScheme get colorScheme => Theme.of(this).colorScheme;
 }
