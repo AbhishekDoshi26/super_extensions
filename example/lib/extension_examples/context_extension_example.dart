@@ -54,6 +54,13 @@ class ContextExtensionExample extends StatelessWidget {
             Text('Is the device mobile?: ${context.isMobile}'),
             Text('Is the device tablet?: ${context.isTablet}'),
             Text('Is the device desktop?: ${context.isDesktop}'),
+
+            /// Example of using the `theme` extension
+            ///
+            Text(
+              "Primary color text and bodyLarge text",
+              style: context.theme.textTheme.bodyLarge,
+            )
           ].separator(20.hSizedBox).toList(),
           // Separator from iterator extension and hSizedBox from number extension
         ),
