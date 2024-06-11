@@ -138,4 +138,17 @@ extension ContextExtension on BuildContext {
   ///and push the [path] using Navigator 1.0
   ///
   void popAndPushNamed(String path) => Navigator.of(this).popAndPushNamed(path);
+
+  /// Get [ThemeData] of the current [BuildContext].
+  ///
+  /// This extension simplifies access to the [ThemeData] object
+  ///
+  /// Example
+  /// ```dart
+  /// //context.colorScheme.primary
+  /// Text("Primary Color Text", style: TextStyle(color: context.theme.colorScheme.primary));
+  ///
+  /// ```
+  ///
+  ThemeData get theme => Theme.of(this);
 }

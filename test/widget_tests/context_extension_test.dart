@@ -745,6 +745,31 @@ void main() {
       expect(find.byKey(tapTarget), findsOneWidget);
     },
   );
+
+  /// Theme extension widget test
+  testWidgets('Theme Extension Test', (WidgetTester tester) async {
+    // Build a widget that uses the extension
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Builder(
+          builder: (context) {
+            // Example using the `theme` extension
+            final Text textWidget = Text(
+              "Primary color text and bodyLarge text",
+              style: context.theme.textTheme.bodyLarge
+                  ?.copyWith(color: context.theme.primaryColor),
+            );
+
+            // Assert that the Text widget is not null and the color is primary
+            expect(textWidget, isNotNull);
+            expect(textWidget.style?.color, equals(context.theme.primaryColor));
+
+            return Container();
+          },
+        ),
+      ),
+    );
+  });
 }
 
 class _TestPageTwo extends StatelessWidget {
